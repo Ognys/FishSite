@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FishProj")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+69c2edc1c74c6a3325ed21dc8d24c1d1c566d97a")]
 [assembly: System.Reflection.AssemblyProductAttribute("FishProj")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FishProj")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

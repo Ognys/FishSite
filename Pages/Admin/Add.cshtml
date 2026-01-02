@@ -1,0 +1,29 @@
+@page
+@model AddModel
+@{
+    ViewData["Title"] = "Add";
+}
+
+<div class="add-main">
+    <form method="post" class="add-form">
+        <div>
+            <label asp-for="Fish.Name"></label>
+            <input asp-for="Fish.Name" />
+            <span asp-validation-for="Fish.Name"></span>
+        </div>
+
+        <div>
+            <label asp-for="Fish.Description"></label>
+            <textarea asp-for="Fish.Description"></textarea>
+            <span asp-validation-for="Fish.Description"></span>
+        </div>
+
+        <div>
+            <label asp-for="Fish.ImagePath"></label>
+            <input asp-for="Fish.ImagePath" />
+            <span asp-validation-for="Fish.ImagePath"></span>
+        </div>
+
+        <button type="submit">Save</button>
+    </form>
+</div>

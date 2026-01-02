@@ -4,7 +4,27 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h1>Fish</h1>
+
+@if (Model.FishList.Count == 0)
+{
+    <p>Пока рыб нет.</p>
+}
+else
+{
+    <div class="fish-grid">
+        @foreach (var f in Model.FishList)
+        {
+            <div class="fish-card">
+                <h3>@f.Name</h3>
+
+                <p>@f.Description</p>
+
+                @if (!string.IsNullOrWhiteSpace(f.ImagePath))
+                {
+                    <img src="@f.ImagePath" alt="@f.Name" style="max-width:300px;" />
+                }
+            </div>
+        }
+    </div>
+}
