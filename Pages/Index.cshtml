@@ -4,27 +4,17 @@
     ViewData["Title"] = "Home page";
 }
 
-<h1>Fish</h1>
-
-@if (Model.FishList.Count == 0)
-{
-    <p>Пока рыб нет.</p>
-}
-else
-{
-    <div class="fish-grid">
-        @foreach (var f in Model.FishList)
-        {
-            <div class="fish-card">
-                <h3>@f.Name</h3>
-
-                <p>@f.Description</p>
-
-                @if (!string.IsNullOrWhiteSpace(f.ImagePath))
-                {
-                    <img src="@f.ImagePath" alt="@f.Name" style="max-width:300px;" />
-                }
-            </div>
-        }
+<div class="home">
+    @if(Model.RandomFish != null) {
+        <div class="home-interface">
+            <h1 class="intetface-name">@Model.RandomFish.Name</h1>
+            <p class="interface-description">@Model.RandomFish.Description</p>
+            <img src="@Model.RandomFish.ImagePath" alt="fish" class="interface-img">
+        </div>
+    }
+    <div class="home-random">
+        <form method="post" class="home-random-form" asp-page-handler="Random">
+            <button class="home-random-button">Получить рыбу</button>
+        </form>
     </div>
-}
+</div>

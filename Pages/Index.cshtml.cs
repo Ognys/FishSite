@@ -8,6 +8,7 @@ public class IndexModel : PageModel
 {
     private readonly ILogger<IndexModel> _logger;
     private readonly FishContext _db;
+    public FishModel RandomFish { get; private set; }
 
     public IndexModel(ILogger<IndexModel> logger, FishContext db)
     {
@@ -16,13 +17,29 @@ public class IndexModel : PageModel
     }
 
 
-    public List<FishModel> FishList { get; private set; } = new();
-
     public async Task OnGetAsync()
     {
-        FishList = await _db.Fish
-            .AsNoTracking()
-            .OrderBy(f => f.Name)
-            .ToListAsync();
+        
     }
+
+
+    public async Task OnPostRandomAsync()
+    {
+        int count = await _db.Fish.CountAsync();
+
+        if(count == 0)
+        {
+            RandomFish = null;
+            return;
+        }
+
+        int skip = Random.Shared.Next(0,count);
+
+        RandomFish = await _db.Fish
+            .AsNoTracking()
+            .OrderBy(f => f.Id)
+            .Skip(skip)
+            .FirstAsync();
+    }
+
 }

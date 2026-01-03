@@ -218,3 +218,6 @@
 /Users/ognys/VSCodeProjects/CSharp/FishProj/FishProj/obj/Debug/net9.0/FishProj.pdb
 /Users/ognys/VSCodeProjects/CSharp/FishProj/FishProj/obj/Debug/net9.0/FishProj.genruntimeconfig.cache
 /Users/ognys/VSCodeProjects/CSharp/FishProj/FishProj/obj/Debug/net9.0/ref/FishProj.dll
+/Users/ognys/VSCodeProjects/CSharp/FishProj/FishProj/obj/Debug/net9.0/compressed/cp1jog5k3e-uy9eon97cc.gz
+/Users/ognys/VSCodeProjects/CSharp/FishProj/FishProj/obj/Debug/net9.0/compressed/ufoqqzqaeo-vrozgqi1ij.gz
+/Users/ognys/VSCodeProjects/CSharp/FishProj/FishProj/obj/Debug/net9.0/compressed/v141ux5ty4-hwffrks97r.gz
