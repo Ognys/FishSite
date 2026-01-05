@@ -1,15 +1,11 @@
 .home {
-     min-height: 100vh;
+    min-height: 100vh;
     background-image: url('/img/home_back.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
-    display: flex;
-    justify-content:center;
-    align-items: flex-end;
-
-    padding-bottom: 50px;
+    position: relative;
 }
 
 .home-random-button {
@@ -25,6 +21,21 @@
     font-weight: 500;
     font-family: 'Rubik';
     transition: transform .15s ease, bacground .15s ease;
+}
+
+.home-interface {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.home-random {
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    transform: translateX(-50%);
 }
 
 .home-random-button:hover {

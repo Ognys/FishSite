@@ -1,0 +1,46 @@
+.header {
+    padding-top: 15px;
+    background-image: url('/img/home_back.jpeg');
+    box-shadow: 0 22px 10px -10px rgba(0, 0, 0, 0.35);
+
+
+    position: relative;
+    z-index: 10;
+}
+
+.header-title {
+    margin-left: 10px;
+}
+
+.header-link-title {
+    font-family: 'Archivo Black';
+    font-size: 30px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, .9);
+    transition: all 0.2s linear;
+}
+
+.header-link-title:hover {
+    color: rgb(135, 173, 203);
+}
+
+.footer {
+
+    background-image: url('/img/home_back.jpeg');
+    background-position: 0;
+    box-shadow: 0 -20px 10px -10px rgba(0, 0, 0, 0.35);
+    position: relative;
+    z-index: 10;
+}
+
+.footer-container {
+    padding: 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    background: rgba(5, 13, 24, 0.35);
+    backdrop-filter: blur(14px);
+}
+
+.icon-github {
+    max-width: 40px;
+}
