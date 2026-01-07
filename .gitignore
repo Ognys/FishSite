@@ -1,0 +1,16 @@
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.log
+
+# SQLite WAL/SHM
+*.db-wal
+*.db-shm
+
+# publish artifacts
+publish/
+
+# Database (production)
+FishDb.db
