@@ -24,7 +24,7 @@ public class AddModel : PageModel
         _db.Fish.Add(Fish);
         await _db.SaveChangesAsync();
 
-        return RedirectToPage("./Index");
+        return RedirectToPage("/Index");
     }
 }
 

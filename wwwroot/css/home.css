@@ -11,8 +11,8 @@
 .home-random-button {
     padding: 14px 28px;
     border-radius: 999px;
-    border: 1px solid rgba(255,255,255,.35);
-    background: rgba(255,255,255,.12);
+    border: 1px solid rgba(255, 255, 255, .35);
+    background: rgba(255, 255, 255, .12);
     backdrop-filter: blur(10px);
     color: white;
     letter-spacing: .3px;
@@ -27,8 +27,30 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    padding: 20px;
+    transform: translate(-50%, -50%);
     text-align: center;
+    font-family: 'Roboto';
+    color: rgba(255, 255, 255, .9);
+    background: rgba(5, 13, 24, 0.55);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 16px;
+
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.interface-img {
+    margin-bottom: 5px;
+}
+
+.intetface-name {
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.interface-description {
+    text-align: left;
 }
 
 .home-random {
@@ -40,7 +62,7 @@
 
 .home-random-button:hover {
     transform: translateY(-2px);
-    background: rgba(255,255,255,.18);
+    background: rgba(255, 255, 255, .18);
 }
 
 .home-random-button:active {

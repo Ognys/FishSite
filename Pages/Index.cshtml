@@ -7,9 +7,9 @@
 <div class="home">
     @if(Model.RandomFish != null) {
         <div class="home-interface">
-            <h1 class="intetface-name">@Model.RandomFish.Name</h1>
-            <p class="interface-description">@Model.RandomFish.Description</p>
             <img src="@Model.RandomFish.ImagePath" alt="fish" class="interface-img">
+            <h2 class="intetface-name">@Model.RandomFish.Name</h2>
+            <p class="interface-description">@Model.RandomFish.Description</p>
         </div>
     }
     <div class="home-random">
