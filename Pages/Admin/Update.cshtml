@@ -1,0 +1,31 @@
+@page
+@model UpdateModel
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="update-main">
+    <form method="post" class="update-form" enctype="multipart/form-data">
+    <input type="hidden" asp-for="UpdateModelFish.Id" />
+
+        <div>
+            <label asp-for="UpdateModelFish.Name"></label>
+            <input asp-for="UpdateModelFish.Name" />
+            <span asp-validation-for="UpdateModelFish.Name"></span>
+        </div>
+
+        <div>
+            <label asp-for="UpdateModelFish.Description"></label>
+            <textarea asp-for="UpdateModelFish.Description"></textarea>
+            <span asp-validation-for="UpdateModelFish.Description"></span>
+        </div>
+
+        <div>
+            <label asp-for="Upload"></label>
+            <input asp-for="Upload" type="file" accept="image/*"/>
+            <span asp-validation-for="Upload"></span>
+        </div>
+
+        <button type="submit">Save</button>
+    </form>
+</div>

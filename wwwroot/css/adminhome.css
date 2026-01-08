@@ -1,0 +1,55 @@
+.adminhome {
+    font-family: 'Roboto';;
+}
+
+.adminhome-list-item {
+    display: flex;
+    align-items: center;
+}
+
+.list-item-img-container {
+  width: 240px;
+  height: 100px;
+  overflow: hidden;
+  flex: 0 0 250px;
+}
+
+.list-item-img {
+    width: 100%;
+    height: 100%;   
+}
+
+.adminhome-grid{
+  display: grid;
+  grid-template-columns: 30px 250px 180px 1fr 160px;
+  gap: 16px;
+  align-items: center;
+}
+
+.adminhome-grid--header{
+  font-weight: 700;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0,0,0,.15);
+  text-align: center;
+}
+
+.adminhome-grid--row{
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+}
+
+.adminhome-item-id {
+    text-align: center;
+}
+
+.adminhome-item-name {
+    font-weight: 500;
+}
+
+.adminhome-item-desc {
+    font-size: 13px;
+}
+
+.adminhome-item-actions {
+    text-align: center;
+}

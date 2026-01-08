@@ -1,0 +1,35 @@
+@page
+@model HomeModel
+@{
+    ViewData["Title"] = "Admin";
+}
+
+<div class="adminhome">
+    <div class="adminhome-container">
+        <div class="adminhome-list">
+            @{
+                <div class="adminhome-grid adminhome-grid--header">
+                    <div>ID</div>
+                    <div>Фото</div>
+                    <div>Название</div>
+                    <div>Описание</div>
+                    <div>Действия</div>
+                </div>
+                foreach (var f in Model.fishList)
+                {
+                    <div class="adminhome-list-item adminhome-grid adminhome-grid--row">
+                        <span class="adminhome-item-id">@f.Id</span>
+                        <div class="list-item-img-container">
+                            <img src="@f.ImagePath" alt="@f.Name" class="list-item-img">
+                        </div>
+                        <h2 class="adminhome-item-name">@f.Name</h2>
+                        <p class="adminhome-item-desc">@f.Description</p>
+                        <div class="adminhome-item-actions">
+                            <a asp-page="./Update" asp-route-id="@f.Id">Изменить</a>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
