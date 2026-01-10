@@ -53,3 +53,21 @@
 .adminhome-item-actions {
     text-align: center;
 }
+
+.adminhome-item-actions-update {
+  color: black;
+  transition: all .2s linear;
+}
+
+.adminhome-item-actions-update:hover {
+  color: rgb(148, 148, 148);
+}
+
+.adminhome-item-action-del-buttton {
+  color: black;
+  transition: all .2s linear;
+}
+
+.adminhome-item-action-del-buttton:hover {
+  color: rgb(148, 148, 148);
+}
