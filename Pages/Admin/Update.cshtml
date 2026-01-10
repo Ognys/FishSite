@@ -4,28 +4,28 @@
     ViewData["Title"] = "Update";
 }
 
-<div class="update-main">
-    <form method="post" class="update-form" enctype="multipart/form-data">
+<div class="update-main home-admin ">
+    <form method="post" class="update-form login-form" enctype="multipart/form-data">
     <input type="hidden" asp-for="UpdateModelFish.Id" />
 
-        <div>
-            <label asp-for="UpdateModelFish.Name"></label>
+        <div class="home-admin-interface-atributeone update-form-name">
+            <label asp-for="UpdateModelFish.Name">Название</label>
             <input asp-for="UpdateModelFish.Name" />
             <span asp-validation-for="UpdateModelFish.Name"></span>
         </div>
 
-        <div>
-            <label asp-for="UpdateModelFish.Description"></label>
+        <div class="home-admin-interface-atributetwo update-form-desc">
+            <label asp-for="UpdateModelFish.Description">Описание</label>
             <textarea asp-for="UpdateModelFish.Description"></textarea>
             <span asp-validation-for="UpdateModelFish.Description"></span>
         </div>
 
-        <div>
-            <label asp-for="Upload"></label>
+        <div class="update-form-upload">
+            <label asp-for="Upload">Изображение</label>
             <input asp-for="Upload" type="file" accept="image/*"/>
             <span asp-validation-for="Upload"></span>
         </div>
 
-        <button type="submit">Save</button>
+        <button type="submit" class="home-admin-interface-button">Сохранить</button>
     </form>
 </div>

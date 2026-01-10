@@ -4,20 +4,20 @@
     ViewData["Title"] = "Login";
 }
 
-<div class="login">
-    <div class="login-interface">
+<div class="login home-admin">
+    <div class="login-interface home-admin-interface">
         <form method="post" class="login-form">
-            <div>
+            <div class="home-admin-interface-atributeone">
                 <label asp-for="Name"></label>
                 <input asp-for="Name" type="text">
                 <span asp-validation-for="Name"></span>
             </div>
-            <div>
+            <div class="home-admin-interface-atributetwo">
                 <label asp-for="Password"></label>
                 <input asp-for="Password" type="text">
                 <span asp-validation-for="Password"></span>
             </div>
-            <button type="submit">Войти</button>
+            <button type="submit" class="home-admin-interface-button">Войти</button>
         </form>
     </div>
 </div>

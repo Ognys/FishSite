@@ -1,0 +1,71 @@
+.home-admin {
+    min-height: calc(100vh - 118px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-family: 'Roboto';
+    font-size: 20px;
+}
+
+.login-form input {
+    border-style: solid;
+}
+
+.login-form textarea {
+    width: 600px;
+    height: 250px;
+    border-style: solid;
+    resize: none;
+}
+
+.home-admin-interface-atributeone {
+    margin-bottom: 10px;
+}
+
+.home-admin-interface-atributetwo {
+    margin-bottom: 15px;
+}
+
+.home-admin-interface-button {
+    border-style: solid;
+    padding: 3px;
+    transition: all .2s linear;
+}
+
+.home-admin-interface-button:hover {
+    background-color: rgb(37, 37, 81);
+    color: white;
+}
+
+/* add styles*/
+
+.add-form-desc {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-form-name {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-form-upload input{
+    border-style: none;
+    margin-bottom: 20px;
+}
+
+.update-form-desc {
+    display: flex;
+    flex-direction: column;
+}
+
+.update-form-name {
+    display: flex;
+    flex-direction: column;
+}
+
+.update-form-upload input{
+    border-style: none;
+    margin-bottom: 20px;
+}

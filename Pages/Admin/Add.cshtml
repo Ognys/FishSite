@@ -4,26 +4,26 @@
     ViewData["Title"] = "Add";
 }
 
-<div class="add-main">
-    <form method="post" class="add-form" enctype="multipart/form-data">
-        <div>
-            <label asp-for="Fish.Name"></label>
+<div class="add-main home-admin">
+    <form method="post" class="add-form login-form" enctype="multipart/form-data">
+        <div class="add-form-name home-admin-interface-atributeone">
+            <label asp-for="Fish.Name">Название</label>
             <input asp-for="Fish.Name" />
             <span asp-validation-for="Fish.Name"></span>
         </div>
 
-        <div>
-            <label asp-for="Fish.Description"></label>
+        <div class="add-form-desc home-admin-interface-atributetwo">
+            <label asp-for="Fish.Description">Описание</label>
             <textarea asp-for="Fish.Description"></textarea>
             <span asp-validation-for="Fish.Description"></span>
         </div>
 
-        <div>
-            <label asp-for="Upload"></label>
+        <div class="add-form-upload">
+            <label asp-for="Upload">Изображение</label>
             <input asp-for="Upload" type="file" accept="image/*"/>
             <span asp-validation-for="Upload"></span>
         </div>
 
-        <button type="submit">Save</button>
+        <button type="submit" class="home-admin-interface-button ">Сохранить</button>
     </form>
 </div>
