@@ -71,3 +71,23 @@
 .adminhome-item-action-del-buttton:hover {
   color: rgb(148, 148, 148);
 }
+
+.adminhome-interface-page {
+  display: flex;
+  justify-content: end;
+  text-align: center;
+  padding: 25px 15px 30px 10px;
+}
+
+.adminhome-interface-page-add {
+  border-style: solid;
+  padding: 10px;
+  background-color: rgb(11, 118, 11);
+  color: white;
+  transition: all .2s linear;
+}
+
+.adminhome-interface-page-add:hover {
+  background-color: white;
+  color: rgb(11, 118, 11);
+}

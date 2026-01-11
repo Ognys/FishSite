@@ -19,27 +19,27 @@ public class IndexModel : PageModel
 
     public async Task OnGetAsync()
     {
-        
+
     }
 
 
-    public async Task OnPostRandomAsync()
+    public async Task<IActionResult> OnPostRandomJsonAsync()
     {
         int count = await _db.Fish.CountAsync();
 
-        if(count == 0)
-        {
-            RandomFish = null;
-            return;
-        }
+        if (count == 0) return new JsonResult(new { ok = false });
 
-        int skip = Random.Shared.Next(0,count);
+        int skip = Random.Shared.Next(0, count);
 
-        RandomFish = await _db.Fish
+        var fish = await _db.Fish
             .AsNoTracking()
             .OrderBy(f => f.Id)
             .Skip(skip)
+            .Select(f => new { f.Id, f.Name, f.Description, f.ImagePath })
             .FirstAsync();
+
+        return new JsonResult(new { ok = true, fish });
     }
+
 
 }

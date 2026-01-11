@@ -5,16 +5,48 @@
 }
 
 <div class="home">
-    @if(Model.RandomFish != null) {
-        <div class="home-interface">
-            <img src="@Model.RandomFish.ImagePath" alt="fish" class="interface-img">
-            <h2 class="intetface-name">@Model.RandomFish.Name</h2>
-            <p class="interface-description">@Model.RandomFish.Description</p>
+    <div class="home-interface" id="fishCard" style="display:none;">
+        <div class="interface-img-container">
+            <img id="fishImg" src="" alt="fish" class="interface-img">
         </div>
-    }
+        <h2 class="intetface-name" id="fishName"></h2>
+        <p class="interface-description" id="fishDesc"></p>
+    </div>
+
     <div class="home-random">
-        <form method="post" class="home-random-form" asp-page-handler="Random">
-            <button class="home-random-button">Получить рыбу</button>
+        <form method="post" class="home-random-form" id="randomForm">
+            @Html.AntiForgeryToken()
+            <button class="home-random-button" type="submit">Получить рыбу</button>
         </form>
     </div>
 </div>
+
+<script>
+  const form = document.getElementById('randomForm');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const token = form.querySelector('input[name="__RequestVerificationToken"]').value;
+
+    const res = await fetch('?handler=RandomJson', {
+      method: 'POST',
+      headers: {
+        'RequestVerificationToken': token
+      }
+    });
+
+    const data = await res.json();
+
+    if (!data.ok) {
+      alert('Рыб в базе нет');
+      return;
+    }
+
+    document.getElementById('fishImg').src = data.fish.imagePath;
+    document.getElementById('fishName').textContent = data.fish.name;
+    document.getElementById('fishDesc').textContent = data.fish.description;
+
+    document.getElementById('fishCard').style.display = 'block';
+  });
+</script>
