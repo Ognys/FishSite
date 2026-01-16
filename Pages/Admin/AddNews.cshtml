@@ -1,0 +1,27 @@
+@page
+@model AddNewsModel
+@{
+    ViewData["Title"] = "Добавить новость";
+}
+
+
+<div class="addnews-nome home-admin">
+    <form method="post" class="addnews-form login-form" enctype="multipart/form-data">
+        <div class="addnews-form-title home-admin-interface-atributeone add-form-name">
+            <label asp-for="News.Title">Название</label>
+            <input asp-for="News.Title" type="text">
+            <span asp-validation-for="News.Title"></span>
+        </div>
+        <div class="addnews-form-desc home-admin-interface-atributetwo add-form-desc">
+            <label asp-for="News.Description">Описание</label>
+            <textarea asp-for="News.Description" type="text"></textarea>
+            <span asp-validation-for="News.Description"></span>
+        </div>
+        <div class="addnews-form-img add-form-upload">
+            <label asp-for="Upload">Изображения</label>
+            <input asp-for="Upload" type="file" multiple accept="image/*">
+            <span asp-validation-for="Upload"></span>
+        </div>
+        <button type="submit" class="home-admin-interface-button">Сохранить</button>
+    </form>
+</div>

@@ -1,0 +1,21 @@
+@page
+@model NewsPageModel
+@{
+    ViewData["Title"] = "Новости";
+}
+
+<div class="News-home">
+    @{
+        foreach(var i in Model.News) {
+            <div>@i.Title</div>
+            <div>@i.Description</div>
+            <div>
+                @{
+                    foreach(var img in i.ImagesNews) {
+                        <img src="@img.ImagePath"/>
+                    }
+                }
+            </div>
+        }
+    }
+</div>
