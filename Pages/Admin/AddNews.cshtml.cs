@@ -41,6 +41,7 @@ public class AddNewsModel : PageModel
             }
         }
 
+        News.CreateDate = DateTime.Now;
         _db.News.Add(News);
         await _db.SaveChangesAsync();
 

@@ -4,18 +4,118 @@
     ViewData["Title"] = "Новости";
 }
 
-<div class="News-home">
-    @{
-        foreach(var i in Model.News) {
-            <div>@i.Title</div>
-            <div>@i.Description</div>
-            <div>
-                @{
-                    foreach(var img in i.ImagesNews) {
-                        <img src="@img.ImagePath"/>
-                    }
+<div class="news-home home">
+    <div class="news-line">
+
+        @foreach (var n in Model.News)
+        {
+            <div class="news-line-card">
+                <div class="news-line-card-name">
+                    <h2 class="news-line-card-title">@n.Title</h2>
+                    <span class="news-line-card-date">@n.CreateDate.ToString("d")</span>
+                </div>
+                @if (n.ImagesNews?.Count > 0)
+                {
+                    <div class="news-line-card-images">
+                        <div class="news-line-card-images-main">
+                            <div class="card-images-main-container">
+                                <img src="@n.ImagesNews[0].ImagePath" alt="img" class="card-img-main" id="main-@n.Id">
+                            </div>
+                        </div>
+                        <div class="news-line-card-thumb">
+                            @{
+                                foreach (var mp in n.ImagesNews)
+                                {
+                                    <button type="button" class="thumb-btn" data-news="@n.Id" data-src="@mp.ImagePath">
+                                        <img src="@mp.ImagePath" alt="thumb" class="thumb-item-img"/>
+                                    </button>
+                                }
+                            }
+                        </div>
+                    </div>
                 }
+
+                <div class="news-line-card-desc">
+                    <p class="news-line-card-desc-text">@n.Description</p>
+                </div>
+
             </div>
         }
-    }
+
+    </div>
 </div>
+
+<script>
+(() => {
+  const INTERVAL_MS = 2100;
+  const FADE_MS = 180;
+
+  const fadeTo = (main, src) => {
+    if (!main || main.src.endsWith(src)) return;
+
+    main.classList.add("is-fading");
+
+    setTimeout(() => {
+      main.src = src;
+
+      main.onload = () => {
+        main.classList.remove("is-fading");
+        main.onload = null;
+      };
+
+      if (main.complete) {
+        main.classList.remove("is-fading");
+      }
+    }, FADE_MS);
+  };
+
+
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".thumb-btn");
+    if (!btn) return;
+
+    const newsId = btn.dataset.news;
+    const src = btn.dataset.src;
+    const main = document.getElementById(`main-${newsId}`);
+
+    fadeTo(main, src);
+  });
+
+
+  document.querySelectorAll(".news-line-card").forEach((card) => {
+    const main = card.querySelector(".card-img-main");
+    if (!main || !main.id?.startsWith("main-")) return;
+
+    const buttons = [...card.querySelectorAll(".thumb-btn")];
+    if (buttons.length <= 1) return;
+
+    let idx = 0;
+    let timer = null;
+
+    const show = (i) => {
+      idx = (i + buttons.length) % buttons.length;
+      fadeTo(main, buttons[idx].dataset.src);
+    };
+
+    const start = () => {
+      if (timer) return;
+      timer = setInterval(() => show(idx + 1), INTERVAL_MS);
+    };
+
+    const stop = () => {
+      if (!timer) return;
+      clearInterval(timer);
+      timer = null;
+    };
+
+    start();
+
+    card.addEventListener("mouseenter", stop);
+    card.addEventListener("mouseleave", start);
+    card.addEventListener("touchstart", stop, { passive: true });
+    card.addEventListener("touchend", start, { passive: true });
+  });
+})();
+</script>
+
+
