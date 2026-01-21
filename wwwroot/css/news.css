@@ -1,3 +1,10 @@
+.news-home {
+    background-image: url('/img/krystian-tambur-k7rZ8wTfABA-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .news-line {
     width: 100%;
     min-height: 100vh;
@@ -92,4 +99,73 @@
 
 .news-line-card-desc-text {
     white-space: pre-wrap;
+}
+
+.news-line-card-desc {
+    padding: 10px;
+}
+
+.news-line-card-desc-text {
+    font-family: 'Rubik';
+    color: white;
+    white-space: pre-wrap;
+}
+
+.news-line-card-desc-text * {
+    color: inherit;
+    font-family: inherit;
+}
+
+.news-line-card-desc-text ul,
+.news-line-card-desc-text ol {
+    display: block;
+    margin: 0.6rem 0;
+    padding-left: 2.5rem;
+}
+
+.news-line-card-desc-text ul {
+    list-style-type: disc;
+    list-style-position: outside;
+}
+
+.news-line-card-desc-text ol {
+    list-style-type: decimal;
+    list-style-position: outside;
+}
+
+.news-line-card-desc-text li {
+    display: list-item;
+    margin-bottom: 0.3rem;
+    color: white; 
+}
+
+.news-line-card-desc-text ul li::before {
+    content: "•";
+    color: white;
+    font-size: 1.2em;
+    margin-right: 0.5rem;
+    display: inline-block;
+    width: 1em;
+}
+
+.news-line-card-desc-text ul {
+    list-style: none; 
+}
+
+.news-line-card-desc-text ul li {
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.news-line-card-desc-text ul li:before {
+    content: "•";
+    color: white;
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.news-line-card-desc-text ol {
+    list-style-type: decimal;
 }
