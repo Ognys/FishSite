@@ -1,15 +1,13 @@
 .header {
-    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 15px 0 10px;
     background-image: url('/img/home_back.jpeg');
     box-shadow: 0 22px 10px -10px rgba(0, 0, 0, 0.35);
 
 
     position: relative;
     z-index: 10;
-}
-
-.header-title {
-    margin-left: 10px;
 }
 
 .header-link-title {
@@ -21,6 +19,22 @@
 }
 
 .header-link-title:hover {
+    color: rgb(135, 173, 203);
+}
+
+.nav-list {
+    display: flex;
+}
+
+.nav-list-item-link {
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 20px;
+    color: rgba(255, 255, 255, .9);
+    transition: all 0.2s linear;
+}
+
+.nav-list-item-link:hover {
     color: rgb(135, 173, 203);
 }
 
@@ -45,23 +59,23 @@
     display: flex;
 }
 
-.list-icon img{
-  width: 40px;
-  height: 40px;
-  display: block;
-  opacity: .7;
-  transition: all 0.5s linear;
+.list-icon img {
+    width: 40px;
+    height: 40px;
+    display: block;
+    opacity: .7;
+    transition: all 0.5s linear;
 }
 
-.list-icon img:hover{
+.list-icon img:hover {
     opacity: 1;
 }
 
-.list-icon{
+.list-icon {
     margin-right: 10px;
 }
 
-.list-icon:last-child{
+.list-icon:last-child {
     margin-right: 0;
 }
 

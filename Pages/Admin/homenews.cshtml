@@ -1,0 +1,55 @@
+@page
+@using System.Text.RegularExpressions
+@model HomenewsModel
+@{
+    ViewData["Title"] = "Новости";
+}
+
+<div class="adminhome">
+    <div class="adminhome-container">
+        <div class="adminhome-interface-page">
+            <div class="adminhome-interface-page-nav">
+                <a asp-page="./home" class="adminhome-interface-page-nav-fish">Рыбы</a>
+                <a asp-page="./homenews" class="adminhome-interface-page-nav-fish">Новости</a>
+            </div>
+            <a asp-page="./AddNews" class="adminhome-interface-page-add">Добавить</a>
+        </div>
+        <div class="adminhome-list">
+            @{
+                <div class="adminhome-grid adminhome-grid--header">
+                    <div>ID</div>
+                    <div>Фото</div>
+                    <div>Название</div>
+                    <div>Описание</div>
+                    <div>Действия</div>
+                </div>
+                foreach (var n in Model.News)
+                {
+                    <div class="adminhome-list-item adminhome-grid adminhome-grid--row">
+                        <span class="adminhome-item-id">@n.Id</span>
+                        <div class="list-item-img-container homenews-item-img-container">
+                            @{
+                                if(n.ImagesNews.Count == 0){
+                                    <div class="notphoto">Нет изображений</div>
+                                }
+                                else {
+                                    foreach(var i in n.ImagesNews) {
+                                        <img src="@i.ImagePath" class="list-item-img-container-thumb"/>
+                                    }
+                                }
+                            }
+                        </div>
+                        <h2 class="adminhome-item-name">@n.Title</h2>
+                        <p class="adminhome-item-desc">@Regex.Replace(n.Description ?? "", "<.*?>", "")</p>
+                        <div class="adminhome-item-actions">
+                            <a asp-page="./UpdateNews" asp-route-id="@n.Id" class="adminhome-item-actions-update" >Изменить</a>
+                            <form method="post" asp-page-handler="Delete" class="adminhome-item-action-del" asp-route-id="@n.Id" onsubmit="return confirm('Подтвердить удаление?');">
+                                <button class="adminhome-item-action-del-buttton">Удалить</button>
+                            </form>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+@page
+@model UpdateNewsModel
+@{
+    ViewData["Title"] = "UpdateNews";
+}
+
+<div class="update-main home-admin ">
+    <form method="post" class="update-form login-form" enctype="multipart/form-data">
+    <input type="hidden" asp-for="UpdateModelNews.Id" />
+
+        <div class="home-admin-interface-atributeone update-form-name">
+            <label asp-for="UpdateModelNews.Title">Название</label>
+            <input asp-for="UpdateModelNews.Title" />
+            <span asp-validation-for="UpdateModelNews.Title"></span>
+        </div>
+
+        <div class="home-admin-interface-atributetwo update-form-desc">
+            <label asp-for="UpdateModelNews.Description">Описание</label>
+            <textarea asp-for="UpdateModelNews.Description"></textarea>
+            <span asp-validation-for="UpdateModelNews.Description"></span>
+        </div>
+
+        <div class="update-form-upload">
+            <label asp-for="Upload">Изображение</label>
+            <input asp-for="Upload" type="file" accept="image/*"/>
+            <span asp-validation-for="Upload"></span>
+        </div>
+
+        <button type="submit" class="home-admin-interface-button">Сохранить</button>
+    </form>
+</div>
